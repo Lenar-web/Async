@@ -2,7 +2,7 @@
     resolve(1)
  })
 let getPromise2 = new Promise((resolve) => {
-  resolve(2)
+  resolve(1)
 })
 
 const all = (promise1, promise2) => {
@@ -11,8 +11,8 @@ const all = (promise1, promise2) => {
   promise1.then(counter++)
   promise2.then(counter++)
 
-  return counter === 2 && Promise.all([promise1, promise2])
+  return counter >= 2 && Promise.all([promise1, promise2])  
 }
 all(getPromise1, getPromise2).then(value => {
-  console.log(value)
+ console.log(value)
 })
