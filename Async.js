@@ -7,13 +7,6 @@ let getPromise2 = new Promise((resolve) => {
 
 const all = (promise1, promise2) => {
   let counter = 0
-  //тот же вариант но более длинный
-  // promise1.then((value)=>{
-  //   return value
-  // }) && counter ++
-  // promise2.then((value) =>{
-  //   return value
-  // }) && counter ++
 
   let upCounter = (prom) => {
     prom.then(value => value) && counter++
