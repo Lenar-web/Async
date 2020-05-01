@@ -8,13 +8,8 @@ let getPromise2 = new Promise((resolve) => {
 const all = (promise1, promise2) => {
   let counter = 0
 
-  let upCounter = (prom) => {
-    prom.then(value => value) && counter++
-  }
-  upCounter(promise1)
-  upCounter(promise2)
-
-
+  promise1.then(counter++)
+  promise2.then(counter++)
 
   return counter === 2 && Promise.all([promise1, promise2])
 }
